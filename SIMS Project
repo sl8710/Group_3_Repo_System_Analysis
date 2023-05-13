@@ -1,5 +1,7 @@
+# We start by importing the datetime module
 import datetime
 
+# This is the definition of the User class
 class User:
     def __init__(self, user_id, username, password, access, email, role):
         self.user_id = user_id
@@ -9,16 +11,19 @@ class User:
         self.email = email
         self.role = role
 
-    def update_user(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    # This function lets us update the user's details
+    def update_user(self, new_details):
+        for detail in new_details:
+            setattr(self, detail, new_details[detail])
 
+    # This function lets us delete a user
     def remove_user(self):
         del self
 
+# The Supplier class is a kind of User
 class Supplier(User):
-    def __init__(self, supplier_id, company_name, address, phone_number, email, certifications, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, supplier_id, company_name, address, phone_number, email, certifications, user_details):
+        User.__init__(self, user_details["user_id"], user_details["username"], user_details["password"], user_details["access"], user_details["email"], user_details["role"])
         self.supplier_id = supplier_id
         self.company_name = company_name
         self.address = address
@@ -26,23 +31,27 @@ class Supplier(User):
         self.email = email
         self.certifications = certifications
 
-    def update_supplier(self, **kwargs):
-        self.update_user(**kwargs)
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    # This function lets us update the supplier's details
+    def update_supplier(self, new_details):
+        self.update_user(new_details)
+        for detail in new_details:
+            setattr(self, detail, new_details[detail])
 
+# The Customer class is also a kind of User
 class Customer(User):
-    def __init__(self, customer_id, payment, purchase_detail, **kwargs):
-        super().__init__(**kwargs)
+    def __init__(self, customer_id, payment, purchase_detail, user_details):
+        User.__init__(self, user_details["user_id"], user_details["username"], user_details["password"], user_details["access"], user_details["email"], user_details["role"])
         self.customer_id = customer_id
         self.payment = payment
         self.purchase_detail = purchase_detail
 
-    def update_customer(self, **kwargs):
-        self.update_user(**kwargs)
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    # This function lets us update the customer's details
+    def update_customer(self, new_details):
+        self.update_user(new_details)
+        for detail in new_details:
+            setattr(self, detail, new_details[detail])
 
+# This is the definition of the Product class
 class Product:
     def __init__(self, product_id, name, price, description):
         self.product_id = product_id
@@ -50,13 +59,16 @@ class Product:
         self.price = price
         self.description = description
 
-    def update_product(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    # This function lets us update the product's details
+    def update_product(self, new_details):
+        for detail in new_details:
+            setattr(self, detail, new_details[detail])
 
+    # This function lets us delete a product
     def remove_product(self):
         del self
 
+# This is the definition of the Stock class
 class Stock:
     def __init__(self, stock_id, stock_item, stock_upc, stock_inbound, stock_outbound, stock_details):
         self.stock_id = stock_id
@@ -66,20 +78,25 @@ class Stock:
         self.stock_outbound = stock_outbound
         self.stock_details = stock_details
 
-    def update_stock(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    # This function lets us update the stock's details
+    def update_stock(self, new_details):
+        for detail in new_details:
+            setattr(self, detail, new_details[detail])
 
+    # This function lets us reduce the stock
     def reduce_stock(self, quantity):
         if quantity <= self.stock_inbound:
             self.stock_inbound -= quantity
             self.stock_outbound += quantity
         else:
+            # If there's not enough stock, we raise an error
             raise ValueError("Not enough stock.")
 
+    # This function lets us delete a stock
     def remove_stock(self):
         del self
 
+# This is the definition of the Payment class
 class Payment:
     def __init__(self, payment_id, date, amount, description, card_detail):
         self.payment_id = payment_id
@@ -88,9 +105,12 @@ class Payment:
         self.description = description
         self.card_detail = card_detail
 
-    def update_payment(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    # This function lets us update the payment's details
+    def update_payment(self, new_details):
+        for detail in new_details:
+            setattr(self, detail, new_details[detail])
 
+    # This function lets us delete a payment
     def remove_payment(self):
         del self
+
