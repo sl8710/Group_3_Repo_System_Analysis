@@ -1,0 +1,96 @@
+import datetime
+
+class User:
+    def __init__(self, user_id, username, password, access, email, role):
+        self.user_id = user_id
+        self.username = username
+        self.password = password
+        self.access = access
+        self.email = email
+        self.role = role
+
+    def update_user(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def remove_user(self):
+        del self
+
+class Supplier(User):
+    def __init__(self, supplier_id, company_name, address, phone_number, email, certifications, **kwargs):
+        super().__init__(**kwargs)
+        self.supplier_id = supplier_id
+        self.company_name = company_name
+        self.address = address
+        self.phone_number = phone_number
+        self.email = email
+        self.certifications = certifications
+
+    def update_supplier(self, **kwargs):
+        self.update_user(**kwargs)
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+class Customer(User):
+    def __init__(self, customer_id, payment, purchase_detail, **kwargs):
+        super().__init__(**kwargs)
+        self.customer_id = customer_id
+        self.payment = payment
+        self.purchase_detail = purchase_detail
+
+    def update_customer(self, **kwargs):
+        self.update_user(**kwargs)
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+class Product:
+    def __init__(self, product_id, name, price, description):
+        self.product_id = product_id
+        self.name = name
+        self.price = price
+        self.description = description
+
+    def update_product(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def remove_product(self):
+        del self
+
+class Stock:
+    def __init__(self, stock_id, stock_item, stock_upc, stock_inbound, stock_outbound, stock_details):
+        self.stock_id = stock_id
+        self.stock_item = stock_item
+        self.stock_upc = stock_upc
+        self.stock_inbound = stock_inbound
+        self.stock_outbound = stock_outbound
+        self.stock_details = stock_details
+
+    def update_stock(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def reduce_stock(self, quantity):
+        if quantity <= self.stock_inbound:
+            self.stock_inbound -= quantity
+            self.stock_outbound += quantity
+        else:
+            raise ValueError("Not enough stock.")
+
+    def remove_stock(self):
+        del self
+
+class Payment:
+    def __init__(self, payment_id, date, amount, description, card_detail):
+        self.payment_id = payment_id
+        self.date = date
+        self.amount = amount
+        self.description = description
+        self.card_detail = card_detail
+
+    def update_payment(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def remove_payment(self):
+        del self
