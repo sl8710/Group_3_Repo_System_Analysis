@@ -22,13 +22,12 @@ products = [
 ]
 
 class Scanner:
- """Simulates a scanner for reading product info or barcodes."""
+# Simulates a scanner for reading product info or barcodes
     def scanBarcode(self, prompt='Scan code: ') -> str:
         return input(prompt)
 
 class ScannerController:
- """Controller to interact with the scanner, model and button."""
-    
+# Controller to interact with the scanner, model, button, display, and lights.
     def __init__(self):
 
         # Instantiate whatever classes from your own model that you need to control
@@ -101,6 +100,7 @@ class ScannerController:
                     self._display.showText(product.expiration_date)
                     found = True
                     self._ledLight1.on()
+                    self._ledLight2.off()
                     break
             if not found:
                 self._display.showText("No data available")
@@ -144,7 +144,6 @@ class ScannerController:
 
     def stateLeft(self, state):
         pass
-
 
 
 
