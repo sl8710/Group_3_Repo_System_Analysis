@@ -4,7 +4,7 @@ ISM6106: Systems Analysis
 
 Team Name: The Code “Pushers”  
 
-Project Title: Smart Inventory Management System (SIMS) 
+Project Title: Expiration Date Tracking System
 
 Team Members and Roles: 
 
@@ -16,20 +16,30 @@ Jiahang Chen - Programming Guru & Backend Developer
 
 Jorge Trujillo - Tester & Security Expert 
 
-Project Description: Our team proposes a Smart Inventory Management System (SIMS) for retail businesses focused on the warehouse-to-customer process. This system will optimize inventory management by predicting demand, automating restocking, and providing real-time analytics to support decision-making. Additionally, the system will meet the requirements of all the stakeholders involved (customers, suppliers, users, etc.).  Key features and requirements include: 
+Project Description: Our intelligent product expiration date inventory tracking system provides a comprehensive solution for small and medium-sized businesses, such as independent cafes and restaurants, to streamline their inventory control processes, ensure accurate record keeping and minimize the risk of product expiration or waste. By integrating a barcode scanner, an inventory database, and a user-friendly display screen, the system simplifies the recording, tracking, and management of products’ expiration dates.
 
-Integration with existing Point of Sale (POS) systems for seamless data exchange. 
+Functional Requirements:
+ 
+1.	FR1: The system should accept input from a barcode scanner, capture product details and log them into the inventory database.
+2.	FR2: The system should store all product-related information in a centralized inventory database.
+3.	FR3: The system should update the inventory database in real-time as products are scanned and recorded.
+4.	FR4: The system should track product expiration dates and notify users when products are nearing expiration.
+5.	FR5: The system should seamlessly integrate with other business systems and software, ensuring efficient data exchange and workflows.
 
-Machine Learning algorithms predict demand based on historical sales data and trends. 
+Non-functional Requirements:
+ 
+1.	NFR1: Performance: The system should handle large volumes of data and maintain quick response times.
+2.	NFR2: Reliability: The system should operate without failure under specified conditions.
+3.	NFR3: Usability: The user interface should be intuitive and easy to navigate, even for users with minimal technical knowledge.
+4.	NFR4: Security: The system should ensure the confidentiality, integrity, and availability of the data it stores and processes.
+5.	NFR5: Scalability: The system should accommodate business growth and increasing inventory volumes without a significant drop in performance.
+6.	NFR6: Maintainability: The system should be easy to update and enhance over time.
+7.	NFR7: Interoperability: The system should integrate seamlessly with other systems and software used in the business.
+8.	NFR8: Availability: The system should be available for use whenever it is needed by the business.
+9.	NFR9: Efficiency: The system should effectively utilize resources and streamline processes to minimize wastage and unnecessary work.
+10.	NFR11: Portability: The system should be capable of being moved from one environment to another, for instance from a test environment to a live/production environment.
+11.	NFR12: Resilience: The system should continue to operate effectively even under adverse conditions, such as network failure or high traffic volume.
+12.	NFR13: Flexibility: The system should be capable of adapting to changing business requirements and evolving needs of the users.
+13.	NFR14: Robustness: The system should handle errors or unexpected inputs gracefully, providing meaningful error messages and not crashing.
 
-Real-time inventory tracking with alerts for low stock and expiring products. 
-
-Automating purchase order creation based on predictive demand and restocking thresholds. 
-
-User-friendly dashboard for data visualization and decision-making support. 
-
-Secure access control and data protection. 
-
-Integration with existing accounting system for management of payments, purchase orders, and invoices. 
-
-With this project proposal, our team aims to create a solution that addresses real-world retail business challenges. By being able to track inventory levels and purchases in real-time, businesses will have accurate data to make decisions about how much to order for each product, when to reorder, and how to store inventory. This system will allow businesses to reduce the cost of storing inventory by minimizing the risk of overstock while also minimizing the risk of stockouts. SIMS will improve inventory management efficiency as well as optimize the business’ supply chain. Most importantly, this system will increase profitability, add value, and boost their bottom line. As we proceed with the project, we will continue to refine our requirements, update our UML diagrams, and collaborate effectively using our GitHub repository.
+ Our system offers businesses a comprehensive solution for effective inventory control, addressing the challenges associated with managing perishable products. By integrating inventory databases, barcode scanners, and display screens, the system simplifies product logging, provides real-time updates, and offers a user-friendly interface to access product’s expiration date. With its tracking capabilities, the system enables businesses to optimize inventory management, minimize waste, and ensure product quality and freshness. While currently focusing on core inventory control functions, such as product logging and tracking, the system's scope includes providing necessary tools for inventory management and analysis. Future development plans include features like order management, purchasing, and advanced forecasting to further enhance the system's capabilities and accommodate evolving business needs. In the future, as we gain more investment and market shares, we will gradually develop additional features such as order management, purchasing or advanced forecasting.
