@@ -8,13 +8,13 @@ Project Title: Expiration Date Tracking System
 
 Team Members and Roles: 
 
-Dahiana Bartolome - Team Lead & System Architect 
+Dahiana Bartolome - Senior Developer/Team Lead
 
-Sergio Lopes - Design Lead & UI/UX Specialist 
+Sergio Lopes - Front-end Developer 
 
-Jiahang Chen - Programming Guru & Backend Developer 
+Jiahang Chen - Software Architect
 
-Jorge Trujillo - Tester & Security Expert 
+Jorge Trujillo - Back-end Developer 
 
 Project Description: Our intelligent product expiration date inventory tracking system provides a comprehensive solution for small and medium-sized businesses, such as independent cafes and restaurants, to streamline their inventory control processes, ensure accurate record keeping and minimize the risk of product expiration or waste. By integrating a barcode scanner, an inventory database, and a user-friendly display screen, the system simplifies the recording, tracking, and management of products’ expiration dates.
 
